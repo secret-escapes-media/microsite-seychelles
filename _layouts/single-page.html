@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+  <body>
+
+    {% include components/tracking.html %}
+
+    {% include page/header.html %}
+
+    {% include page/banner.html %}
+
+    <div class="content-spacing section-spacing">
+
+      <!-- loops through section file for page content -->
+      {% for section in site.data.sections %}
+        <div id="{{section.id}}" class="js-nav-section vpad--xxxxl {% cycle 'bg--white', 'bg--light' %}">
+          <div class="container">
+
+            {% if section.id != "guide" %}
+              <!-- Content for the standard sections -->
+              <div class="row row--valign-center row--gutters-lg row--6-6">
+                <div class="col">
+                  <div class="title title--xxl">{{section.title}}</div>
+                  <p>{{section.description}}</p>
+                </div>
+                <div class="col">
+                  <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                </div>
+              </div>
+
+              <div class="space--xxl"></div>
+
+              <div class="row row--6-6 row--xxl-4-4-4">
+                {% for offer in section.offers %}
+                  <div class="col">
+                    {% include offer/offer-sm.html %}
+                  </div>
+                {% endfor %}
+              </div>
+
+            {% else %}
+              <!-- Content for guide sign up section -->
+              <div id="entry-form" class="text--center">
+                <div class="title title--xl">{{section.title}}</div>
+                <div class="width width--lg space--xs">
+                  <p>{{section.description}}</p>
+                  <div class="space--lg"></div>
+                  <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
+                    Strutta entry form for guide download
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+
+    {% include page/footer.html %}
+
+  </body>
+
+</html>
