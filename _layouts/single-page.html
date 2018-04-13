@@ -18,41 +18,115 @@
         <div id="{{section.id}}" class="js-nav-section vpad--xxxxl {% cycle 'bg--white', 'bg--light' %}">
           <div class="container">
 
-            {% if section.id != "guide" %}
-              <!-- Content for the standard sections -->
-              <div class="row row--valign-center row--gutters-lg row--6-6">
-                <div class="col">
+            {% case section.id %}
+
+              {% when 'travel' %}
+                <!-- Content for the qatar section -->
+                <div class="text--center">
                   <div class="title title--xxl">{{section.title}}</div>
-                  <p>{{section.description}}</p>
-                </div>
-                <div class="col">
-                  <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                </div>
-              </div>
 
-              <div class="space--xxl"></div>
-
-              <div class="row row--6-6 row--xxl-4-4-4">
-                {% for offer in section.offers %}
-                  <div class="col">
-                    {% include offer/offer-sm.html %}
+                  <div class="width width--lg space--sm">
+                    <p>{{section.description}}</p>
+                    <div class="space--xs"></div>
+                    <a href="#qatar-link" class="btn btn--orange">See Our Flights</a>
                   </div>
-                {% endfor %}
-              </div>
+
+                  <div class="width width--xl space--xl">
+                    <div class="bob bob--6-6">
+                      <div class="bob__img">
+                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                      </div>
+                      <div class="bob__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
+                        <div class="space--sm"></div>
+                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
+                      </div>
+                    </div>
+                    <div class="bob bob--6-6 bob--swap">
+                      <div class="bob__img">
+                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                      </div>
+                      <div class="bob__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
+                        <div class="space--sm"></div>
+                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
+                      </div>
+                    </div>
+                    <div class="bob bob--6-6">
+                      <div class="bob__img">
+                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                      </div>
+                      <div class="bob__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
+                        <div class="space--sm"></div>
+                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+              {% when 'guide' %}
+                <!-- Content for guide sign up section -->
+                <div class="text--center">
+                  <div class="title title--xl">{{section.title}}</div>
+                  <div class="width width--lg space--xs">
+                    <p>{{section.description}}</p>
+                    <div class="space--lg"></div>
+                    <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
+                      Strutta entry form for guide download
+                    </div>
+                  </div>
+                </div>
+
+              {% else %}
+                <!-- Content for the standard sections -->
+                <div class="row row--6-6 row--valign-center row--gutters-lg">
+                  <div class="col">
+                    <div class="title title--xl">{{section.title}}</div>
+                    <p>{{section.description}}</p>
+                    <div class="space--sm"></div>
+                    <a href="#guide" class="btn btn--orange">Download the guide</a>
+                  </div>
+                  <div class="col">
+                    <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                    <div class="row row--6-6 row--no-gutters">
+                      <div class="col">
+                        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                      </div>
+                      <div class="col">
+                        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            {% endcase %}
+
+
+
+
+
+
+
+
+
+
+            {% if section.id != "guide" %}
+
 
             {% else %}
-              <!-- Content for guide sign up section -->
-              <div id="entry-form" class="text--center">
-                <div class="title title--xl">{{section.title}}</div>
-                <div class="width width--lg space--xs">
-                  <p>{{section.description}}</p>
-                  <div class="space--lg"></div>
-                  <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
-                    Strutta entry form for guide download
-                  </div>
-                </div>
-              </div>
+
             {% endif %}
+
+
+
+
+
+
+
 
 
           </div>

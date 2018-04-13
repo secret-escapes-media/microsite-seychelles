@@ -41,11 +41,15 @@
     max-width: $lg;
     @include bp($bp) {
       width: 60%;
+      .bob--6-6 & { width: 50%; }
       max-width: none;
     }
   }
   &__text {
-    @include bp($bp) { width: 40%; }
+    @include bp($bp) {
+      width: 40%;
+      .bob--6-6 & { width: 50%; }
+    }
   }
 
 }
