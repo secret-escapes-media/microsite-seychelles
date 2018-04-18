@@ -12,18 +12,12 @@
     <div class="site-nav__wrap">
 
         <!-- loops through all sections within page -->
-        {% for section in site.data.sections %}<span class="site-nav__item">
-
+        {% for section in page.page-nav %}<span class="site-nav__item">
           <a class="site-nav__link site-nav__link--{{section.id}}" href="#{{section.id}}">
-            {% if section.nav-title %}
-              {{section.nav-title}}
-            {% else %}
-              {{section.title}}
-            {% endif %}
+            {{section.title}}
           </a>
-
         </span>{% endfor %}
-        
+
     </div>
   </div>
 </div>

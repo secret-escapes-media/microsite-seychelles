@@ -17,4 +17,8 @@
   }
 
   &--grey  { background-color: $grey-lighter; }
+  &--fixed  { background-attachment: fixed; background-size: cover; }
+
+
+  &--blue  { background-color: $b-blue-dark; }
 }

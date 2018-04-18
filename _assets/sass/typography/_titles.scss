@@ -4,8 +4,9 @@
 
   // custom content headline
   font-family: $font-title-01;
-  font-weight: 200;
   @include font-smoothing;
+
+  &--display { font-family: $font-title-02; }
 
   &--xxxl   { font-size: $s8; line-height: 1.033; }
   &--xxl    { font-size: $s7; line-height: 1.075; }
@@ -37,14 +38,14 @@
   font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
-  letter-spacing: .33rem;
+  letter-spacing: .3rem;
   @include font-smoothing;
 
   font-size: $s2; // default size
   &--lg     { font-size: $s4; }
   &--sm     { font-size: $s0; }
   @include bp($lg){
-    font-size: $s3; // default size
+    font-size: $s4; // default size
     &--lg     { font-size: $s5; }
     &--sm     { font-size: $s1; }
   }
@@ -87,7 +88,7 @@
 .banner-title {
 
   // custom banner headline
-  font-family: $font-title-01;
+  font-family: $font-title-02;
   font-weight: 200;
   line-height: 1.2;
   text-transform: uppercase;
@@ -97,11 +98,11 @@
   letter-spacing: .5rem;
   @include bp($md){
     letter-spacing: 1rem;
-    font-size: $s7;
+    font-size: $s9;
   }
   @include bp($xl){
-    letter-spacing: 2rem;
-    font-size: $s10;
+    letter-spacing: 1.5rem;
+    font-size: $s12;
   }
 
 }

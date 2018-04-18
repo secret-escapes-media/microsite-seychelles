@@ -1,143 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  {% include page/head.html %}
-
-  <body>
-
-    {% include components/tracking.html %}
-
-    {% include page/header.html %}
-
-    {% include page/banner.html %}
-
-    <div class="content-spacing section-spacing">
-
-      <!-- loops through section file for page content -->
-      {% for section in site.data.sections %}
-        <div id="{{section.id}}" class="js-nav-section vpad--xxxxl {% cycle 'bg--white', 'bg--light' %}">
-          <div class="container">
-
-            {% case section.id %}
-
-              {% when 'travel' %}
-                <!-- Content for the qatar section -->
-                <div class="text--center">
-                  <div class="title title--xxl">{{section.title}}</div>
-
-                  <div class="width width--lg space--sm">
-                    <p>{{section.description}}</p>
-                    <div class="space--xs"></div>
-                    <a href="#qatar-link" class="btn btn--orange">See Our Flights</a>
-                  </div>
-
-                  <div class="width width--xl space--xl">
-                    <div class="bob bob--6-6">
-                      <div class="bob__img">
-                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                      </div>
-                      <div class="bob__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
-                        <div class="space--sm"></div>
-                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
-                      </div>
-                    </div>
-                    <div class="bob bob--6-6 bob--swap">
-                      <div class="bob__img">
-                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                      </div>
-                      <div class="bob__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
-                        <div class="space--sm"></div>
-                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
-                      </div>
-                    </div>
-                    <div class="bob bob--6-6">
-                      <div class="bob__img">
-                        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                      </div>
-                      <div class="bob__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptate debitis dolorem nostrum deleniti id obcaecati velit deserunt repudiandae odit error, cupiditate tempora, suscipit accusantium quidem. Voluptatem, corrupti quam omnis.</p>
-                        <div class="space--sm"></div>
-                        <a href="#qatar-link" class="btn btn--outline btn--outline-orange btn--sm">Find out more</a>
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-
-
-              {% when 'guide' %}
-                <!-- Content for guide sign up section -->
-                <div class="text--center">
-                  <div class="title title--xl">{{section.title}}</div>
-                  <div class="width width--lg space--xs">
-                    <p>{{section.description}}</p>
-                    <div class="space--lg"></div>
-                    <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
-                      Strutta entry form for guide download
-                    </div>
-                  </div>
-                </div>
-
-              {% else %}
-                <!-- Content for the standard sections -->
-                <div class="row row--6-6 row--valign-center row--gutters-lg">
-                  <div class="col">
-                    <div class="title title--xl">{{section.title}}</div>
-                    <p>{{section.description}}</p>
-                    <div class="space--sm"></div>
-                    <a href="#guide" class="btn btn--orange">Download the guide</a>
-                  </div>
-                  <div class="col">
-                    <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                    <div class="row row--6-6 row--no-gutters">
-                      <div class="col">
-                        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                      </div>
-                      <div class="col">
-                        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-            {% endcase %}
+---
+layout: default
+---
+<div class="wp" id="start"></div>
 
 
 
+<!-- loops through section file for page content -->
+{% for section in page.page-sections %}
+  <div class="js-nav-section vpad--xxxxl {% cycle 'bg--white', 'bg--light' %}">
+    <div class="wp" id="{{section.id}}"></div>
+    <div class="container">
 
-
-
-
-
-
-
-            {% if section.id != "guide" %}
-
-
-            {% else %}
-
-            {% endif %}
-
-
-
-
-
-
-
-
-
+      <!-- Content for the standard sections -->
+      <div class="bob{% cycle '',' bob--swap' %}">
+        <div class="bob__text boxpad--lg">
+          <div class="title title--xxl">{{section.title}}</div>
+          <div class="space--sm"></div>
+          <p>{{section.description}}</p>
+          <div class="space--sm"></div>
+          <a href="#guide" class="btn btn--solid">Download the guide</a>
+        </div>
+        <div class="bob__img boxpad--lg">
+          <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
+          <div class="row row--6-6 row--no-gutters">
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
+            </div>
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
+            </div>
           </div>
         </div>
-      {% endfor %}
+      </div>
 
     </div>
+  </div>
+{% endfor %}
 
 
-    {% include page/footer.html %}
 
-  </body>
+{% assign travel-section = page.travel-section %}
+<!-- qatar section -->
+<div class="js-nav-section vpad--xxxxl bg--fixed" style="background-image: url({{site.img}}/content/flights-bg.jpg);">
+  <div class="wp" id="{{travel-section.id}}"></div>
+  <div class="container">
 
-</html>
+    <div class="width width--xl text--center">
+      <h3 class="title title--xxl">{{travel-section.title}}</h3>
+      <div class="space--sm"></div>
+      <p class="text--xl">{{travel-section.description}}</p>
+      <div class="space--sm"></div>
+      <a href="#qatar-link" class="btn btn--solid">See Our Flights</a>
+    </div>
+
+    <div class="width width--xl space--xl">
+      {% for feature in travel-section.features %}
+      <div class="bob bob--6-6{% cycle '', ' bob--swap'%}">
+        <div class="bob__img">
+          <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
+        </div>
+        <div class="bob__text">
+          <h4 class="title title--sm text--bold">{{feature.title}}</h4>
+          <p>{{feature.content}}</p>
+          <div class="space--sm"></div>
+          <a href="#qatar-link" class="btn btn--outline btn--sm">Find out more</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% assign guide-section = page.guide-section %}
+<!-- Guide sign up section -->
+<div class="js-nav-section vpad--xxxl bg--blue text--white">
+  <div class="wp" id="{{guide-section.id}}"></div>
+  <div class="container">
+    <div class="text--center">
+      <h2 class="title title--xxl text--bold">{{guide-section.title}}</h2>
+      <hr class="hr--center">
+      <div class="width width--lg space--xs">
+        <p class="text--lg">{{guide-section.description}}</p>
+        <div class="space--lg"></div>
+        <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
+          Strutta entry form for guide download
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
