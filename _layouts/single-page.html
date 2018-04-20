@@ -7,9 +7,9 @@ layout: default
 
 <!-- loops through section file for page content -->
 {% for section in page.page-sections %}
-  <div class="js-nav-section vpad--xxxxl {% cycle 'bg--white', 'bg--light' %}">
+  <div class="js-nav-section {% cycle 'bg--white', 'bg--light' %}">
     <div class="wp" id="{{section.id}}"></div>
-    <div class="container">
+    <div class="container vpad--xxxxl">
 
       <!-- Content for the standard sections -->
       <div class="bob{% cycle '',' bob--swap' %}">
@@ -39,14 +39,39 @@ layout: default
 
 
 
+
+{% assign guide-section = page.guide-section %}
+<!-- Guide sign up section -->
+<div class="js-nav-section bg--blue bg--pattern-10 text--white">
+  <div class="wp" id="{{guide-section.id}}"></div>
+  <div class="container vpad--xxxl">
+    <div class="text--center">
+      <h2 class="title title--xxl text--bold">{{guide-section.title}}</h2>
+      <hr class="hr--center">
+      <div class="width width--lg space--xs">
+        <p class="text--lg">{{guide-section.description}}</p>
+        <div class="space--lg"></div>
+        <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
+          Strutta entry form for guide download
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 {% assign travel-section = page.travel-section %}
 <!-- qatar section -->
-<div class="js-nav-section vpad--xxxxl bg--fixed" style="background-image: url({{site.img}}/content/flights-bg.jpg);">
+<div class="js-nav-section bg--fixed" style="background-image: url({{site.img}}/content/flights-bg.jpg);">
   <div class="wp" id="{{travel-section.id}}"></div>
-  <div class="container">
+  <div class="container vpad--xxxxl">
 
     <div class="width width--xl text--center">
       <h3 class="title title--xxl">{{travel-section.title}}</h3>
+      <div class="space--sm"></div>
+      <h3 class="title title--xs text--upper text--wide-kern text--bold">{{travel-section.title-sub}}</h3>
       <div class="space--sm"></div>
       <p class="text--xl">{{travel-section.description}}</p>
       <div class="space--sm"></div>
@@ -69,27 +94,5 @@ layout: default
       {% endfor %}
     </div>
 
-  </div>
-</div>
-
-
-
-
-{% assign guide-section = page.guide-section %}
-<!-- Guide sign up section -->
-<div class="js-nav-section vpad--xxxl bg--blue text--white">
-  <div class="wp" id="{{guide-section.id}}"></div>
-  <div class="container">
-    <div class="text--center">
-      <h2 class="title title--xxl text--bold">{{guide-section.title}}</h2>
-      <hr class="hr--center">
-      <div class="width width--lg space--xs">
-        <p class="text--lg">{{guide-section.description}}</p>
-        <div class="space--lg"></div>
-        <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
-          Strutta entry form for guide download
-        </div>
-      </div>
-    </div>
   </div>
 </div>

@@ -1,8 +1,13 @@
 # Site settings
-title: Seychelles
-client:
-  name: Qatar Airways
-  link: "#client-name"
+title: Qatar Airways Seychelles
+clients:
+  - name: Qatar Airways
+    link: "#client-name"
+    img: qatar-airways.svg
+  - name: Seychelles
+    link: "#client-name"
+    img: seychelles.png
+
 core-se-link: https://www.secretescapes.com/current-sales
 description: >
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

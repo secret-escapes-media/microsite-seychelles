@@ -19,4 +19,12 @@
     max-width: 120px;
     &-sm { max-width: 100px; }
   }
+  &--qatar-airways {
+    max-width: 110px;
+    &.logo--partner-sm { max-width: 90px; }
+  }
+  &--seychelles {
+    max-width: 100px;
+    &.logo--partner-sm { max-width: 80px; }
+  }
 }
