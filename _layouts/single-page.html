@@ -14,20 +14,21 @@ layout: default
       <!-- Content for the standard sections -->
       <div class="bob{% cycle '',' bob--swap' %}">
         <div class="bob__text boxpad--lg">
-          <div class="title title--xxl">{{section.title}}</div>
+          <div class="title title--xxxl title--display">{{section.title}}</div>
           <div class="space--sm"></div>
-          <p>{{section.description}}</p>
-          <div class="space--sm"></div>
-          <a href="#guide" class="btn btn--solid">Download the guide</a>
+          <p class="text--lg">{{section.description}}</p>
+          <div class="space--lg"></div>
+          <a href="{{site.baseurl}}/#guida" class="btn btn--solid">Scarica la guida</a>
         </div>
         <div class="bob__img boxpad--lg">
-          <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
-          <div class="row row--6-6 row--no-gutters">
+          <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{section.id}}/01.jpg');"></div>
+          <div class="space--md"></div>
+          <div class="row row--6-6 row--gutters-sm">
             <div class="col">
-              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
+              <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{section.id}}/02.jpg');"></div>
             </div>
             <div class="col">
-              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/img.jpg');"></div>
+              <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{section.id}}/03.jpg');"></div>
             </div>
           </div>
         </div>
@@ -46,10 +47,9 @@ layout: default
   <div class="wp" id="{{guide-section.id}}"></div>
   <div class="container vpad--xxxl">
     <div class="text--center">
-      <h2 class="title title--xxl text--bold">{{guide-section.title}}</h2>
-      <hr class="hr--center">
-      <div class="width width--lg space--xs">
-        <p class="text--lg">{{guide-section.description}}</p>
+      <h2 class="title title--xxxl title--display">{{guide-section.title}}</h2>
+      <div class="width width--xl space--md">
+        <p class="text--xl">{{guide-section.description}}</p>
         <div class="space--lg"></div>
         <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
           Strutta entry form for guide download
@@ -62,37 +62,24 @@ layout: default
 
 
 
-{% assign travel-section = page.travel-section %}
+{% assign qatar-section = page.qatar-section %}
 <!-- qatar section -->
-<div class="js-nav-section bg--fixed" style="background-image: url({{site.img}}/content/flights-bg.jpg);">
-  <div class="wp" id="{{travel-section.id}}"></div>
-  <div class="container vpad--xxxxl">
+<div class="js-nav-section bg--img qatar-section" style="background-image: url({{site.img}}/content/qatar/bg.jpg);">
+  <div class="wp" id="{{qatar-section.id}}"></div>
+  <div class="container vpad--xxxl text--white">
 
-    <div class="width width--xl text--center">
-      <h3 class="title title--xxl">{{travel-section.title}}</h3>
+    <div class="container--lg">
+      <img class="qatar-section__logo" src="{{site.img}}/logo/qatar-airways.svg" alt="Qatar Airways">
+      <h3 class="title title--xxl text--bold">{{qatar-section.title}}</h3>
+      <div class="space--xs"></div>
+      <h3 class="title title--sm text--italic">{{qatar-section.title-sub}}</h3>
+      <div class="space--xs"></div>
+      <hr class="hr--left">
+      {{qatar-section.description}}
       <div class="space--sm"></div>
-      <h3 class="title title--xs text--upper text--wide-kern text--bold">{{travel-section.title-sub}}</h3>
-      <div class="space--sm"></div>
-      <p class="text--xl">{{travel-section.description}}</p>
-      <div class="space--sm"></div>
-      <a href="#qatar-link" class="btn btn--solid">See Our Flights</a>
-    </div>
-
-    <div class="width width--xl space--xl">
-      {% for feature in travel-section.features %}
-      <div class="bob bob--6-6{% cycle '', ' bob--swap'%}">
-        <div class="bob__img">
-          <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/img.jpg');"></div>
-        </div>
-        <div class="bob__text">
-          <h4 class="title title--sm text--bold">{{feature.title}}</h4>
-          <p>{{feature.content}}</p>
-          <div class="space--sm"></div>
-          <a href="#qatar-link" class="btn btn--outline btn--sm">Find out more</a>
-        </div>
-      </div>
-      {% endfor %}
+      <a href="#qatar-link" class="btn btn--qatar">Vedi voli</a>
     </div>
 
   </div>
+  <div class="qatar-section__waves"></div>
 </div>

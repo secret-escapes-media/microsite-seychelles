@@ -35,17 +35,16 @@
 
   // custom content headline
   font-family: $font-title-01;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: .3rem;
+  font-style: italic;
   @include font-smoothing;
 
-  font-size: $s2; // default size
+  font-size: $s4; // default size
   &--lg     { font-size: $s4; }
   &--sm     { font-size: $s0; }
   @include bp($lg){
-    font-size: $s4; // default size
+    font-size: $s6; // default size
     &--lg     { font-size: $s5; }
     &--sm     { font-size: $s1; }
   }

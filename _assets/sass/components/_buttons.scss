@@ -20,6 +20,9 @@
   &--solid { background-color: $b-blue;
     &:hover { background-color: $b-blue-dark; }
   }
+  &--qatar { background-color: $qatar;
+    &:hover { background-color: darken($qatar,10); }
+  }
   &--outline {
     color: inherit;
     &:before {
