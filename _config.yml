@@ -6,7 +6,7 @@ clients:
     img: qatar-airways.svg
   - name: Seychelles
     link: "#client-name"
-    img: seychelles.png
+    img: seychelles.svg
 
 core-se-link: https://www.secretescapes.com/current-sales
 description: >

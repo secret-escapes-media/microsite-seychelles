@@ -90,16 +90,15 @@
   font-family: $font-title-02;
   font-weight: 200;
   line-height: 1.2;
-  text-transform: uppercase;
   @include font-smoothing;
 
-  font-size: $s5;
-  letter-spacing: .5rem;
-  @include bp($md){
-    letter-spacing: 1rem;
-    font-size: $s9;
+  font-size: $s9;
+  @include bp($lg){
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+      font-size: $s11;
   }
-  @include bp($xl){
+  @include bp($xxl){
     letter-spacing: 1.5rem;
     font-size: $s12;
   }
