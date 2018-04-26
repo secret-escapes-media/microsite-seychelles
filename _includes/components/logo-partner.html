@@ -1,6 +1,6 @@
 
 {% for client in site.clients %}
-<a id="track-partner-logo{{include.placement | prepend: '-'}}" class="logo logo--partner logo--{{client.name|slugify}}{% if include.small %} logo--partner-sm{% endif %}" href="{{client.link}}">
+<a id="track-partner-logo{{include.placement | prepend: '-'}}" class="logo logo--partner logo--{{client.name|slugify}}{% if include.small %} logo--partner-sm{% endif %}" href="{{client.link}}" target="_blank">
   <img src="{{site.img}}/logo/{{client.img}}" alt="{{client.name}} Logo">
 </a>
 {% endfor %}

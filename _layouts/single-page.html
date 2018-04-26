@@ -48,12 +48,12 @@ layout: default
   <div class="container vpad--xxxl">
     <div class="text--center">
       <h2 class="title title--xxxl title--display">{{guide-section.title}}</h2>
-      <div class="width width--xl space--md">
+      <div class="width width--lg space--md">
         <p class="text--xl">{{guide-section.description}}</p>
         <div class="space--lg"></div>
 
-        <div class="form" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
-          Strutta entry form for guide download
+        <div class="form">
+          <iframe src="{{page.entry-form.url}}" width="100%" height="{{page.entry-form.height}}" frameborder="0"></iframe>
         </div>
 
       </div>
@@ -72,7 +72,7 @@ layout: default
 
   <div class="qatar-section__content container text--white">
     <div class="container--lg">
-      <img class="qatar-section__logo" src="{{site.img}}/logo/qatar-airways.svg" alt="Qatar Airways">
+      <a href="{{qatar-section.link}}" target="_blank" id="tracking-qatar-banner-logo"><img class="qatar-section__logo" src="{{site.img}}/logo/qatar-airways.svg" alt="Qatar Airways"></a>
       <h3 class="title title--xxl text--bold">{{qatar-section.title}}</h3>
       <div class="space--xs"></div>
       <h3 class="title title--sm text--italic">{{qatar-section.title-sub}}</h3>
@@ -80,7 +80,7 @@ layout: default
       <hr class="hr--left">
       {{qatar-section.description}}
       <div class="space--md"></div>
-      <a href="{{qatar-section.link}}" id="tracking-qatar-banner-button" class="btn btn--qatar-invert">Vedi voli</a>
+      <a href="{{qatar-section.link}}" target="_blank" id="tracking-qatar-banner-button" class="btn btn--qatar-invert">Vedi voli</a>
     </div>
   </div>
 
@@ -93,7 +93,7 @@ layout: default
     {% for feature in qatar-section.features %}
       <div class="bob{% cycle '', ' bob--swap' %}">
         <div class="bob__img">
-          <div class="bg-img bg-img--16-9" style="background-image: url({{site.img}}/content/qatar/{{feature.id}}.jpg);"></div>
+          <a href="{{feature.link}}" target="_blank" id="tracking-qatar-{{feature.id}}-img" class="bg-img bg-img--16-9" style="background-image: url({{site.img}}/content/qatar/{{feature.id}}.jpg);"></a>
         </div>
         <div class="bob__text">
           <h4 class="title title--lg text--bold">{{feature.title}}</h4>
@@ -103,7 +103,7 @@ layout: default
     {% endfor %}
 
     <div class="space--xxl text--center">
-      <a href="{{qatar-section.link}}" id="tracking-qatar-content-button" class="btn btn--lg btn--qatar">Vedi voli</a>
+      <a href="{{qatar-section.link}}" target="_blank" id="tracking-qatar-content-button" class="btn btn--lg btn--qatar">Vedi voli</a>
     </div>
 
   </div>
