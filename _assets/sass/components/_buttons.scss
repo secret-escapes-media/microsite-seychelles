@@ -23,6 +23,9 @@
   &--qatar { background-color: $qatar;
     &:hover { background-color: darken($qatar,10); }
   }
+  &--qatar-invert { background-color: $white; color: $qatar;
+    &:hover { color: darken($qatar,10); }
+  }
   &--outline {
     color: inherit;
     &:before {

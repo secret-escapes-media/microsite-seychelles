@@ -12,16 +12,59 @@
 
 .qatar-section {
   position: relative;
+  padding-bottom: $s12;
+  background-color: $qatar;
+  @include bp($xl){
+    padding-top: $s12;
+    padding-bottom: $s14;
+  }
+  &__content {
+    position: relative;
+    z-index: $z-content-upper;
+  }
   &__logo {
-    width: 200px;
-    min-width: 140px;
+    width: 140px;
     margin-bottom: $s2;
+    @include bp($xl){
+      width: 200px;
+    }
+  }
+  &__bg {
+    position: relative;
+    display: block;
+    margin-bottom: $s4;
+    @include background-attributes();
+    &:after {
+      content: "";
+      display: block;
+      background-image: linear-gradient(to bottom,rgba($qatar,0) 0,rgba($qatar,1) 100%);
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 80px;
+    }
+    &:before {
+      content: "";
+      width: 100%;
+      padding-top: 66.66667%;
+      display: block;
+    }
+    @include bp($xl){
+      margin-bottom: 0;
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      z-index: $z-content;
+      &:before { content: none; }
+      &:after { content: none; }
+    }
   }
   &__waves {
     position: absolute;
+    z-index: 1;
     bottom: -1px;
     left: 0; right: 0;
-    background-image: url('../img/content/qatar/waves.svg');
+    background-image: url('../img/content/qatar/waves-beige.svg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,4 +75,18 @@
       padding-top: 5.5%;
     }
   }
+}
+// information about classes
+.qatar-info-section {
+  background-image: linear-gradient(to bottom,#dee4e3 0,#ede8d4 100%);
+  position: relative;
+  padding-top: $s8;
+  padding-bottom: $s12;
+  & .qatar-section__waves { background-image: url('../img/content/qatar/waves.svg'); }
+}
+
+.form {
+  background-color: darken($b-blue-dark,10);
+  border-radius: 4px;
+  box-shadow: 0 0 60px lighten($b-blue-dark,10);
 }

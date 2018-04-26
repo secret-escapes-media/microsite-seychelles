@@ -92,7 +92,10 @@
   line-height: 1.2;
   @include font-smoothing;
 
-  font-size: $s9;
+  font-size: $s8;
+  @include bp($sm){
+    font-size: $s9;
+  }
   @include bp($lg){
     text-transform: uppercase;
     letter-spacing: .2rem;

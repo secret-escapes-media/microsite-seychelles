@@ -61,9 +61,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 70px;
+    width: 45px;
     overflow: hidden;
     margin: auto;
+    margin-top: 10px;
+    @include bp($xl){
+      width: 70px;
+    }
     &:before {
       content: "";
       display: block;

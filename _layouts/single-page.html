@@ -51,9 +51,11 @@ layout: default
       <div class="width width--xl space--md">
         <p class="text--xl">{{guide-section.description}}</p>
         <div class="space--lg"></div>
-        <div class="bg--light" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
+
+        <div class="form" style="padding: {{page.entry-form.height | divided_by: 2}}px 0;">
           Strutta entry form for guide download
         </div>
+
       </div>
     </div>
   </div>
@@ -64,10 +66,11 @@ layout: default
 
 {% assign qatar-section = page.qatar-section %}
 <!-- qatar section -->
-<div class="js-nav-section bg--img qatar-section" style="background-image: url({{site.img}}/content/qatar/bg.jpg);">
+<div class="js-nav-section bg--img qatar-section">
   <div class="wp" id="{{qatar-section.id}}"></div>
-  <div class="container vpad--xxxl text--white">
+  <div class="qatar-section__bg" style="background-image: url({{site.img}}/content/qatar/bg.jpg);"></div>
 
+  <div class="qatar-section__content container text--white">
     <div class="container--lg">
       <img class="qatar-section__logo" src="{{site.img}}/logo/qatar-airways.svg" alt="Qatar Airways">
       <h3 class="title title--xxl text--bold">{{qatar-section.title}}</h3>
@@ -76,8 +79,31 @@ layout: default
       <div class="space--xs"></div>
       <hr class="hr--left">
       {{qatar-section.description}}
-      <div class="space--sm"></div>
-      <a href="#qatar-link" class="btn btn--qatar">Vedi voli</a>
+      <div class="space--md"></div>
+      <a href="{{qatar-section.link}}" id="tracking-qatar-banner-button" class="btn btn--qatar-invert">Vedi voli</a>
+    </div>
+  </div>
+
+  <div class="qatar-section__waves"></div>
+</div>
+
+<div class="qatar-info-section">
+  <div class="container">
+
+    {% for feature in qatar-section.features %}
+      <div class="bob{% cycle '', ' bob--swap' %}">
+        <div class="bob__img">
+          <div class="bg-img bg-img--16-9" style="background-image: url({{site.img}}/content/qatar/{{feature.id}}.jpg);"></div>
+        </div>
+        <div class="bob__text">
+          <h4 class="title title--lg text--bold">{{feature.title}}</h4>
+          <p class="text--lg">{{feature.content}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="space--xxl text--center">
+      <a href="{{qatar-section.link}}" id="tracking-qatar-content-button" class="btn btn--lg btn--qatar">Vedi voli</a>
     </div>
 
   </div>
